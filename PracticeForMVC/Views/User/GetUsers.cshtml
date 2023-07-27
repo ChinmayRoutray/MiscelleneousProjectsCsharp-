@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PracticeForMVC.Models.User>
+
+<h1>@ViewBag.message !</h1>
+
+<div>
+    <table>
+        <tr>
+            <td>User Id</td>
+            <td>Username</td>
+            <td>Password</td>
+        </tr
+        @foreach(var user in @Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.username</td>
+                <td>@user.password</td>
+            </tr>
+        }
+    </table>
+</div>
