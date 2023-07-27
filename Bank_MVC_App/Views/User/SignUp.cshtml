@@ -1,0 +1,41 @@
+﻿@model User
+
+<div>
+    <h1> @ViewBag.message </h1>
+</div>
+<div>
+    <div class="col-md-6 offset-md-4">
+        <form asp-action="AddUser" method="post">
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountNumber" class="control-label"></label>
+                <input asp-for="AccountNumber" class="form-control" />
+                <span asp-validation-for="AccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountBalance" class="control-label"></label>
+                <input asp-for="AccountBalance" class="form-control" />
+                <span asp-validation-for="AccountBalance" class="text-danger"></span>
+            </div>
+            <br />
+            <div>
+                <button type="submit" class="btn btn-success" value="submit"> Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

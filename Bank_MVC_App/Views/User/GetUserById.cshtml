@@ -1,0 +1,27 @@
+﻿@model User
+<h1>Hi! @Model.UserName</h1>
+<h3> These are your details.</h3>
+<div>
+    <div>
+        <table class="table"> 
+            <thead>
+                <tr>
+                    <td> Customer Id </td>
+                    <td> User Name </td>
+                    <td> Password </td>
+                    <td> Account Number </td>
+                    <td> Account Balance </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> @Model.UserId </td>
+                    <td> @Model.UserName </td>
+                    <td> @Model.Password </td>
+                    <td> @Model.AccountNumber </td>
+                    <td> @Model.AccountBalance </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

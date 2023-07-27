@@ -1,0 +1,49 @@
+﻿@model IEnumerable<User>
+
+<div class="row">
+    <div class="col-md-6 offset-md-2">
+        <h1> @ViewBag.message </h1>
+    </div>
+</div>
+<div  >
+    <div class="col-md-8 offset-md-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td> Customer Id </td>
+                    <td> User Name </td>
+                    <td> Password </td>
+                    <td> Account Number </td>
+                    <td> Account Balance </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var cus in Model)
+                {
+                 <tr>
+                     <div class="row">
+                         <td> @cus.UserId </td>
+                        <td> @cus.UserName </td>
+                        <td> @cus.Password </td>
+                        <td> @cus.AccountNumber </td>
+                        <td> @cus.AccountBalance </td>
+                        <td><a asp-action="GetUserById" asp-route-UserId="@cus.UserId">
+                        <button class="btn btn-success" type="submit">
+                                User Details </button> 
+                            </a></td>
+                     </div>
+                </tr>
+                
+                }
+            </tbody>
+        </table>
+        <br />
+        <div>
+            <p> Not a User? </p>
+            <a asp-action="SignUp">
+                <button class="btn btn-primary" type="submit" value="submit">
+                    Click here to SignUp
+                </button></a>
+        </div>
+    </div>
+</div>
